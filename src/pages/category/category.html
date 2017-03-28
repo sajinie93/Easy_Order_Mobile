@@ -1,0 +1,111 @@
+<!--<link rel="stylesheet" href="../../theme/variables.scss">-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>category</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-grid>
+
+    <ion-row *ngFor="let item of items; let i=index" >
+      <template [ngIf]="i % 3 === 0">
+
+        <ion-col *ngIf="i < items.length" (click)="itemTapped(items[i])" col-12 col-sm>
+          <ion-card>
+            <ion-card-header>
+              <ion-avatar item-center>
+                <div class="thumbnail">
+                  <img src="{{items[i].imagePath}} " />
+                  <div class="wrapper">
+                    <div class="caption post-content">
+
+                      {{items[i].title}}
+                      <div class="item-note" item-right>
+                        {{items[i].description}}<br>
+                        {{items[i].description}}<br>
+                        <!--{{items[i].description}}<br>-->
+                        <!--{{items[i].description}}<br>-->
+                        <!--{{items[i].description}}<br>-->
+                        <!--{{items[i].description}}<br>-->
+                        <!--{{items[i].description}}<br>-->
+                        <!--{{items[i].description}}<br>-->
+                        <!--{{items[i].description}}-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ion-avatar>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+
+        <ion-col *ngIf="i+1 < items.length" (click)="itemTapped(items[i+1])" col-12 col-sm>
+          <ion-card>
+            <ion-card-header>
+              <ion-avatar item-center>
+                <div class="thumbnail">
+                  <img src="{{items[i+1].imagePath}} " />
+                  <div class="wrapper">
+                    <div class="caption post-content">
+
+                      {{items[i+1].title}}
+                      <div class="item-note" item-right>
+                        {{items[i+1].description}}<br>
+                        {{items[i+1].description}}<br>
+                        <!--{{items[i].description}}<br>-->
+                        <!--{{items[i].description}}<br>-->
+                        <!--{{items[i].description}}<br>-->
+                        <!--{{items[i].description}}<br>-->
+                        <!--{{items[i].description}}<br>-->
+                        <!--{{items[i].description}}<br>-->
+                        <!--{{items[i].description}}-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ion-avatar>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+
+        <ion-col *ngIf="i < items.length" (click)="itemTapped(items[i+2])" col-12 col-sm>
+          <ion-card>
+            <ion-card-header>
+              <ion-avatar item-center>
+                <div class="thumbnail">
+                  <img src="{{items[i+2].imagePath}} " />
+                  <div class="wrapper">
+                    <div class="caption post-content">
+
+                      {{items[i+2].title}}
+                      <div class="item-note" item-right>
+                        {{items[i+2].description}}<br>
+                        {{items[i+2].description}}<br>
+                        <!--{{items[i].description}}<br>-->
+                        <!--{{items[i].description}}<br>-->
+                        <!--{{items[i].description}}<br>-->
+                        <!--{{items[i].description}}<br>-->
+                        <!--{{items[i].description}}<br>-->
+                        <!--{{items[i].description}}<br>-->
+                        <!--{{items[i].description}}-->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ion-avatar>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </template>
+    </ion-row>
+  </ion-grid>
+
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div>
+</ion-content>
