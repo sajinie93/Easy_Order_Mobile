@@ -1,0 +1,165 @@
+<!--<p>{{category}}</p>-->
+
+<ion-grid>
+
+  <ion-row *ngFor="let item of items; let i=index" >
+    <template [ngIf]="i % 4 === 0">
+
+      <ion-col width-20 *ngIf="i < items.length" (click)="itemTapped(items[i])" col-12 col-sm>
+        <ion-card>
+          <ion-card-header>
+            <ion-avatar item-center>
+              <div class="thumbnail">
+                <img src="{{items[i].imagePath}} " />
+                <div class="wrapper">
+                  <div class="caption post-content">
+
+                    {{items[i].title}}
+                    <!--<div class="item-note" item-right>-->
+                    <!--{{items[i].description}}<br>-->
+                    <!--{{items[i].description}}<br>-->
+
+                    <!--</div>-->
+                    <div>
+                      Rs.{{items[i].unitPrice}}.00
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ion-avatar>
+          </ion-card-header>
+
+          <button ion-button block>Block Button</button>
+
+          <button ion-button icon-left>
+            <ion-icon name="home"></ion-icon>
+            Left Icon
+          </button>
+
+          <button ion-button block>
+            <ion-item>
+              <h3>Add to wish-list</h3>
+              <ion-icon name="cart" item-right large></ion-icon>
+            </ion-item>
+          </button>
+          <ion-item>
+            <h3>Add to wish-list</h3>
+            <ion-icon name="cart" item-right large></ion-icon>
+          </ion-item>
+
+          <ion-item>
+            <h3>Customize</h3>
+            <ion-icon name="arrow-forward" item-right  large ></ion-icon>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+
+      <ion-col width-20 *ngIf="i+1 < items.length" (click)="itemTapped(items[i+1])" col-12 col-sm>
+        <ion-card>
+          <ion-card-header>
+            <ion-avatar item-center>
+              <div class="thumbnail">
+              <img src="{{items[i+1].imagePath}} " />
+                <div class="wrapper">
+                  <div class="caption post-content">
+
+                    {{items[i+1].title}}
+                    <!--<div class="item-note" item-right>-->
+                      <!--{{items[i+1].description}}<br>-->
+                      <!--{{items[i+1].description}}<br>-->
+                      <!--{{items[i].description}}<br>-->
+
+                    <!--</div>-->
+                    <div>
+                      Rs.{{items[i+1].unitPrice}}.00
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ion-avatar>
+          </ion-card-header>
+          <ion-item>
+            <h3>Add to wish-list</h3>
+            <ion-icon name="cart" item-right large></ion-icon>
+          </ion-item>
+
+          <ion-item>
+            <h3>Customize</h3>
+            <ion-icon name="arrow-forward" item-right large ></ion-icon>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+
+      <ion-col width-20 *ngIf="i < items.length" (click)="itemTapped(items[i+2])" col-12 col-sm>
+        <ion-card>
+          <ion-card-header>
+            <ion-avatar item-center>
+              <div class="thumbnail">
+                <img src="{{items[i+2].imagePath}} " />
+                <div class="wrapper">
+                  <div class="caption post-content">
+
+                    {{items[i+2].title}}
+                    <!--<div class="item-note" item-right>-->
+                      <!--{{items[i+2].description}}<br>-->
+                      <!--{{items[i+2].description}}<br>-->
+
+                    <!--</div>-->
+                    <div>
+                      Rs.{{items[i+2].unitPrice}}.00
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ion-avatar>
+          </ion-card-header>
+          <ion-item>
+            <h3>Add to wish-list</h3>
+            <ion-icon name="cart" item-right large></ion-icon>
+          </ion-item>
+
+          <ion-item>
+            <h3>Customize</h3>
+            <ion-icon name="arrow-forward" item-right large ></ion-icon>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+
+      <ion-col width-20 *ngIf="i < items.length" (click)="itemTapped(items[i+3])" col-12 col-sm>
+        <ion-card>
+          <ion-card-header>
+            <ion-avatar item-center>
+              <div class="thumbnail">
+                <img src="{{items[i+3].imagePath}} " />
+                <div class="wrapper">
+                  <div class="caption post-content">
+
+                    {{items[i+3].title}}
+                    <!--<div class="item-note" item-right>-->
+                      <!--{{items[i+3].description}}<br>-->
+                      <!--{{items[i+3].description}}<br>-->
+
+                    <!--</div>-->
+                    <div>
+                      Rs.{{items[i+3].unitPrice}}.00
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ion-avatar>
+          </ion-card-header>
+          <ion-item>
+            <h3>Add to wish-list</h3>
+            <ion-icon name="cart" item-right large></ion-icon>
+          </ion-item>
+
+          <ion-item>
+            <h3>Customize</h3>
+            <ion-icon name="arrow-forward" item-right large ></ion-icon>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </template>
+  </ion-row>
+</ion-grid>
+

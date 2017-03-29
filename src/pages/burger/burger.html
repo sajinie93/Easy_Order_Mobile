@@ -1,16 +1,33 @@
 
 
-<ion-header>
-  <!--<ion-navbar>-->
-    <!--<button ion-button menuToggle>-->
-      <!--<ion-icon name="menu"></ion-icon>-->
-    <!--</button>-->
-    <!--<ion-title>Rides</ion-title>-->
-  <!--</ion-navbar>-->
-  <ion-navbar>
-    <ion-title>{{selectedItem.title}}</ion-title>
-  </ion-navbar>
+<!--<ion-header>-->
+  <!--&lt;!&ndash;<ion-navbar>&ndash;&gt;-->
+    <!--&lt;!&ndash;<button ion-button menuToggle>&ndash;&gt;-->
+      <!--&lt;!&ndash;<ion-icon name="menu"></ion-icon>&ndash;&gt;-->
+    <!--&lt;!&ndash;</button>&ndash;&gt;-->
+    <!--&lt;!&ndash;<ion-title>Rides</ion-title>&ndash;&gt;-->
+  <!--&lt;!&ndash;</ion-navbar>&ndash;&gt;-->
+  <!--&lt;!&ndash;<ion-navbar>&ndash;&gt;-->
+    <!--&lt;!&ndash;<ion-title>{{selectedItem.title}}</ion-title>&ndash;&gt;-->
+  <!--&lt;!&ndash;</ion-navbar>&ndash;&gt;-->
 
+  <!--<ion-toolbar no-border-top>-->
+    <!--<ion-segment [(ngModel)]="select">-->
+      <!--<ion-segment-button value="Breakfast">-->
+        <!--Breakfast-->
+      <!--</ion-segment-button>-->
+      <!--<ion-segment-button value="Chicken & Fish">-->
+        <!--Chicken & Fish-->
+      <!--</ion-segment-button>-->
+      <!--<ion-segment-button value="Beef">-->
+        <!--Beef-->
+      <!--</ion-segment-button>-->
+    <!--</ion-segment>-->
+  <!--</ion-toolbar>-->
+
+<!--</ion-header>-->
+
+<!--<ion-content>-->
   <ion-toolbar no-border-top>
     <ion-segment [(ngModel)]="select">
       <ion-segment-button value="Breakfast">
@@ -25,9 +42,6 @@
     </ion-segment>
   </ion-toolbar>
 
-</ion-header>
-
-<ion-content padding>
   <div [ngSwitch]="select">
 
     <ion-grid *ngSwitchCase="'Breakfast'">
@@ -194,4 +208,4 @@
 
     </ion-grid>
   </div>
-</ion-content>
+<!--</ion-content>-->

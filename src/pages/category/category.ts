@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {CategoryService} from "../../providers/category-service";
 import {Category} from "../../models/category";
-import {BurgerPage} from "../burger/burger";
 
 
 @Component({
@@ -11,10 +10,13 @@ import {BurgerPage} from "../burger/burger";
 
 })
 
-
 export class CategoryPage {
 
   items: Category[];
+
+  select: 2;
+
+  @ViewChild('myNav') nav: NavController
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private categoryService: CategoryService) {
     this.items = categoryService.getCategories();
@@ -24,14 +26,5 @@ export class CategoryPage {
     console.log('ionViewDidLoad CategoryPage');
   }
 
-  // itemTapped(item){
-  //   alert(item.title);
-  // }
-
-  itemTapped(item) {
-    this.navCtrl.push(BurgerPage, {
-      item: item
-    });
-  }
 
 }

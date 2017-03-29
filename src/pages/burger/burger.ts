@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {BurgerService} from "../../providers/burger-service";
 
-/*
-  Generated class for the Burger page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
   selector: 'page-burger',
   templateUrl: 'burger.html'
@@ -14,10 +9,11 @@ import { NavController, NavParams } from 'ionic-angular';
 export class BurgerPage {
 
   selectedItem: any;
-  items=[];
+  items=[];           //dynamically store the menu items fetched from the database
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private burgerService: BurgerService) {
     this.selectedItem = navParams.get('item');
+
   }
 
   ionViewDidLoad() {

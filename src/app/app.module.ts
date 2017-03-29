@@ -10,6 +10,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import {CategoryService} from "../providers/category-service";
 import {AboutPage} from "../pages/about/about";
 import {BurgerPage} from "../pages/burger/burger";
+import {BurgerService} from "../providers/burger-service";
+import {MenuItemService} from "../providers/menu-item-service";
+import {MenuItemPage} from "../pages/menu-item/menu-item";
 
 
 @NgModule({
@@ -18,7 +21,8 @@ import {BurgerPage} from "../pages/burger/burger";
     TabsPage,
     CategoryPage,
     AboutPage,
-    BurgerPage
+    BurgerPage,
+    MenuItemPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -29,12 +33,15 @@ import {BurgerPage} from "../pages/burger/burger";
     TabsPage,
     CategoryPage,
     AboutPage,
-    BurgerPage
+    BurgerPage,
+    MenuItemPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     CategoryService,
+    BurgerService,
+    MenuItemService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
