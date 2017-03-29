@@ -15,6 +15,12 @@ export class MenuItemService {
     ,
     new Burger(3,'breakfast','cheesy',300,'images/burger/breakfast/Pdt_thumbs_GP_B&E_dec15.png'),
     new Burger(4,'breakfast','yum yum',400,'images/burger/breakfast/thumbnail_pdt_Chicken_McMuffin.png')
+    ,
+    new Burger(5,'breakfast','cheesy',300,'images/burger/breakfast/Pdt_thumbs_GP_B&E_dec15.png'),
+    new Burger(5,'breakfast','yum yum',400,'images/burger/breakfast/thumbnail_pdt_Chicken_McMuffin.png')
+    ,
+    new Burger(7,'breakfast','cheesy',300,'images/burger/breakfast/Pdt_thumbs_GP_B&E_dec15.png'),
+    new Burger(8,'breakfast','yum yum',400,'images/burger/breakfast/thumbnail_pdt_Chicken_McMuffin.png')
 
   ];
   private chickenAndFish: Burger[] = [new Burger(1,'chickenAndFish','very tasty and yummy',100,'images/burger/chickenAndFish/Bigmac-Chick_Thumb_0.png'),

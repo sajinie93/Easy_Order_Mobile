@@ -29,29 +29,18 @@
             </ion-avatar>
           </ion-card-header>
 
-          <button ion-button block>Block Button</button>
 
-          <button ion-button icon-left>
-            <ion-icon name="home"></ion-icon>
-            Left Icon
-          </button>
-
-          <button ion-button block>
-            <ion-item>
-              <h3>Add to wish-list</h3>
-              <ion-icon name="cart" item-right large></ion-icon>
-            </ion-item>
-          </button>
-          <ion-item>
-            <h3>Add to wish-list</h3>
-            <ion-icon name="cart" item-right large></ion-icon>
-          </ion-item>
-
-          <ion-item>
-            <h3>Customize</h3>
-            <ion-icon name="arrow-forward" item-right  large ></ion-icon>
-          </ion-item>
         </ion-card>
+
+        <button  ion-button color="secondary" full small icon-right (click)="addToCart(items[i])" >
+          Add to wish-list
+          <ion-icon name="cart"></ion-icon>
+        </button>
+
+        <button ion-button color="secondary" block small icon-right>
+          Customize
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
       </ion-col>
 
       <ion-col width-20 *ngIf="i+1 < items.length" (click)="itemTapped(items[i+1])" col-12 col-sm>
@@ -78,16 +67,20 @@
               </div>
             </ion-avatar>
           </ion-card-header>
-          <ion-item>
-            <h3>Add to wish-list</h3>
-            <ion-icon name="cart" item-right large></ion-icon>
-          </ion-item>
 
-          <ion-item>
-            <h3>Customize</h3>
-            <ion-icon name="arrow-forward" item-right large ></ion-icon>
-          </ion-item>
         </ion-card>
+
+
+        <button ion-button color="secondary" full small icon-right (click)="addToCart(items[i+1])">
+          Add to wish-list
+          <ion-icon name="cart"></ion-icon>
+        </button>
+
+        <button ion-button color="secondary" block small icon-right>
+          Customize
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+
       </ion-col>
 
       <ion-col width-20 *ngIf="i < items.length" (click)="itemTapped(items[i+2])" col-12 col-sm>
@@ -113,16 +106,18 @@
               </div>
             </ion-avatar>
           </ion-card-header>
-          <ion-item>
-            <h3>Add to wish-list</h3>
-            <ion-icon name="cart" item-right large></ion-icon>
-          </ion-item>
 
-          <ion-item>
-            <h3>Customize</h3>
-            <ion-icon name="arrow-forward" item-right large ></ion-icon>
-          </ion-item>
         </ion-card>
+
+        <button ion-button color="secondary" full small icon-right (click)="addToCart(items[i+2])">
+          Add to wish-list
+          <ion-icon name="cart"></ion-icon>
+        </button>
+
+        <button ion-button color="secondary" block small icon-right>
+          Customize
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
       </ion-col>
 
       <ion-col width-20 *ngIf="i < items.length" (click)="itemTapped(items[i+3])" col-12 col-sm>
@@ -148,16 +143,19 @@
               </div>
             </ion-avatar>
           </ion-card-header>
-          <ion-item>
-            <h3>Add to wish-list</h3>
-            <ion-icon name="cart" item-right large></ion-icon>
-          </ion-item>
 
-          <ion-item>
-            <h3>Customize</h3>
-            <ion-icon name="arrow-forward" item-right large ></ion-icon>
-          </ion-item>
+
         </ion-card>
+
+        <button ion-button color="secondary" full small icon-right (click)="addToCart(items[i+3])">
+          Add to wish-list
+          <ion-icon name="cart"></ion-icon>
+        </button>
+
+        <button ion-button color="secondary" block small icon-right>
+          Customize
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
       </ion-col>
     </template>
   </ion-row>

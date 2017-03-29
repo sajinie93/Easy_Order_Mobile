@@ -33,6 +33,10 @@ export class MenuItemPage implements OnChanges, OnInit, DoCheck{
     console.log('onInit');
   }
 
+  addToCart(item: any){
+
+  }
+
 
 
 
