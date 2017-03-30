@@ -6,7 +6,9 @@
   </ion-navbar>
 
   <ion-toolbar no-border-top>
+    <!--make two-way data binding for the "select" property-->
     <ion-segment [(ngModel)]="select" >
+      <!--dynamically update segments for currently available categories-->
       <ion-segment-button *ngFor="let item of items" value={{item.id}}>
         {{item.title}}
       </ion-segment-button>
@@ -20,37 +22,18 @@
   <ion-grid>
     <ion-row>
       <ion-col col-9 padding>
+        <!--division to display menu items-->
+        <!--dynamically update category property through property binding-->
         <page-menu-item [category]=select></page-menu-item>
       </ion-col>
 
       <ion-col col-3 padding>
+        <!--division to display wish list-->
         <page-shopping-cart></page-shopping-cart>
       </ion-col>
 
     </ion-row>
   </ion-grid>
-
-
-  <!--<div [ngSwitch]="select">-->
-
-    <!--<ion-grid *ngSwitchCase="'burger'">-->
-      <!--<page-burger></page-burger>-->
-    <!--</ion-grid>-->
-    <!--<ion-grid *ngSwitchCase="'saladAndWraps'">-->
-
-    <!--</ion-grid>-->
-    <!--<ion-grid *ngSwitchCase="'sides'">-->
-
-    <!--</ion-grid>-->
-    <!--<ion-grid *ngSwitchCase="'drinks'">-->
-
-    <!--</ion-grid>-->
-    <!--<ion-grid *ngSwitchCase="'desserts'">-->
-
-    <!--</ion-grid>-->
-  <!--</div>-->
-
-
 
   <div *ngIf="selectedItem" padding>
     You navigated here from <b>{{selectedItem.title}}</b>

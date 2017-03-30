@@ -1,24 +1,20 @@
-<!--<p>{{category}}</p>-->
 
 <ion-grid>
-
-
+  <!--iterate through the menu-items list-->
   <ion-row *ngFor="let item of items; let i=index" >
+    <!--decide whether to have a new row after every 4 items-->
     <template [ngIf]="i % 4 === 0">
 
       <ion-col width-25 *ngIf="i < items.length"  col-12 col-sm >
         <ion-card>
-          <!--<ion-card-header>-->
-            <ion-avatar item-center (click)="itemTapped(items[i])">
-              <div class="thumbnail">
-                <img src="{{items[i].imagePath}} " />
-
-              </div>
-            </ion-avatar>
-          <!--</ion-card-header>-->
-
-
+          <!--trigger tapping the menu item image-->
+          <ion-avatar item-center (click)="itemTapped(items[i])">
+            <div class="thumbnail">
+              <img src="{{items[i].imagePath}} " />
+            </div>
+          </ion-avatar>
         </ion-card>
+
         <div text-center>
           <p>{{items[i].title}}</p>
         </div>
@@ -27,12 +23,13 @@
           <p><b>Rs.{{items[i].unitPrice}}.00</b></p>
         </div>
 
+        <!--trigger tapping adding the menu item into the shopping cart-->
         <button  ion-button color="secondary" full small icon-right (click)="addToCart(items[i])" >
           Add to wish-list
           <ion-icon name="cart"></ion-icon>
         </button>
 
-         <button *ngIf="category===1 || category === 2             "  ion-button color="secondary" block small icon-right>
+         <button  ion-button color="secondary" block small icon-right>
           Customize
           <ion-icon name="arrow-forward"></ion-icon>
         </button>
@@ -40,15 +37,12 @@
 
       <ion-col width-25 *ngIf="i+1 < items.length"  col-12 col-sm   >
         <ion-card>
-          <!--<ion-card-header>-->
             <ion-avatar item-center (click)="itemTapped(items[i+1])">
               <div class="thumbnail">
               <img src="{{items[i+1].imagePath}} " />
 
               </div>
             </ion-avatar>
-          <!--</ion-card-header>-->
-
         </ion-card>
 
         <div text-center>
@@ -73,15 +67,12 @@
 
       <ion-col width-25 *ngIf="i < items.length"  col-12 col-sm >
         <ion-card>
-          <!--<ion-card-header>-->
             <ion-avatar item-center (click)="itemTapped(items[i+2])">
               <div class="thumbnail">
                 <img src="{{items[i+2].imagePath}} " />
 
               </div>
             </ion-avatar>
-          <!--</ion-card-header>-->
-
         </ion-card>
 
         <div text-center>
@@ -105,17 +96,14 @@
 
       <ion-col width-25 *ngIf="i < items.length"  col-12 col-sm >
         <ion-card>
-          <!--<ion-card-header>-->
             <ion-avatar item-center (click)="itemTapped(items[i+3])">
               <div class="thumbnail" >
                 <img src="{{items[i+3].imagePath}} " />
 
               </div>
             </ion-avatar>
-          <!--</ion-card-header>-->
-
-
         </ion-card>
+
         <div text-center>
           <p>{{items[i+3].title}}</p>
         </div>

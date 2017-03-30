@@ -9,8 +9,6 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {CategoryService} from "../providers/category-service";
 import {AboutPage} from "../pages/about/about";
-import {BurgerPage} from "../pages/burger/burger";
-import {BurgerService} from "../providers/burger-service";
 import {MenuItemService} from "../providers/menu-item-service";
 import {MenuItemPage} from "../pages/menu-item/menu-item";
 import {ShoppingCartService} from "../providers/shopping-cart-service";
@@ -23,7 +21,6 @@ import {ShoppingCartPage} from "../pages/shopping-cart/shopping-cart";
     TabsPage,
     CategoryPage,
     AboutPage,
-    BurgerPage,
     MenuItemPage,
     ShoppingCartPage
   ],
@@ -36,7 +33,6 @@ import {ShoppingCartPage} from "../pages/shopping-cart/shopping-cart";
     TabsPage,
     CategoryPage,
     AboutPage,
-    BurgerPage,
     MenuItemPage,
     ShoppingCartPage
   ],
@@ -44,7 +40,6 @@ import {ShoppingCartPage} from "../pages/shopping-cart/shopping-cart";
     StatusBar,
     SplashScreen,
     CategoryService,
-    BurgerService,
     MenuItemService,
     ShoppingCartService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}

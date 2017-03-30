@@ -4,12 +4,7 @@ import 'rxjs/add/operator/map';
 import {MenuItem} from "../models/menuItem";
 import {Observable} from "rxjs";
 
-/*
-  Generated class for the ShoppingCartService provider.
 
-  See https://angular.io/docs/ts/latest/guide/dependency-injection.html
-  for more info on providers and Angular 2 DI.
-*/
 @Injectable()
 export class ShoppingCartService {
 
@@ -29,8 +24,9 @@ export class ShoppingCartService {
   }
 
   removeFromWishList(menuItem: MenuItem){
-    // this.wishList
     this.totalPrize = this.totalPrize - menuItem.unitPrice;
+    this.wishList.splice(this.wishList.indexOf(menuItem), 1);
+    this.orderList.splice(this.orderList.indexOf(menuItem.id), 1);
   }
 
   getWishList(): MenuItem[]{

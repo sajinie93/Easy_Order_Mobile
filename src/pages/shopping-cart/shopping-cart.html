@@ -1,34 +1,24 @@
 
 <ion-card>
-    <!--<ion-header>-->
-      <!--Wish List-->
-      <!--<ion-icon name="cart"></ion-icon>-->
-    <!--</ion-header>-->
 
   <ion-item>
     <ion-list>
       <ion-list-header>
         Wish List
       </ion-list-header>
+      <!--iterate through the items in the shopping list-->
       <ion-item *ngFor="let item of shoppingList">
         <span item-left>{{item.title}}</span>
         <span item-right>{{item.unitPrice}}</span>
         <ion-icon name="arrow-dropright-circle" item-right></ion-icon>
-        <ion-icon ion-item name="close-circle" item-right (click)="removeFromWishList()"></ion-icon>
+        <!--trigger tapping removing the items in the shopping list-->
+        <ion-icon ion-item name="close-circle" item-right (click)="removeFromWishList(item)"></ion-icon>
       </ion-item>
-
     </ion-list>
   </ion-item>
 
   <ion-item>
     <hr>
-    <!--<div padding-bottom="10px">-->
-      <!--<ion-item>-->
-        <!--<span item-left>Service charge (5%)</span>-->
-        <!--<span item-right>price</span>-->
-      <!--</ion-item>-->
-
-    <!--</div>-->
 
     <div text-center padding-bottom="10px">
       <h5>NET PRICE</h5>
@@ -37,12 +27,10 @@
     </div>
 
     <div text-center>
+      <!--trigger tapping placing the order-->
       <button ion-button default round (click)="placeOrder()">Proceed</button>
     </div>
 
-
-
   </ion-item>
-
 
 </ion-card>
