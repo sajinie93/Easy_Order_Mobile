@@ -13,6 +13,8 @@ import {BurgerPage} from "../pages/burger/burger";
 import {BurgerService} from "../providers/burger-service";
 import {MenuItemService} from "../providers/menu-item-service";
 import {MenuItemPage} from "../pages/menu-item/menu-item";
+import {ShoppingCartService} from "../providers/shopping-cart-service";
+import {ShoppingCartPage} from "../pages/shopping-cart/shopping-cart";
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import {MenuItemPage} from "../pages/menu-item/menu-item";
     CategoryPage,
     AboutPage,
     BurgerPage,
-    MenuItemPage
+    MenuItemPage,
+    ShoppingCartPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -34,7 +37,8 @@ import {MenuItemPage} from "../pages/menu-item/menu-item";
     CategoryPage,
     AboutPage,
     BurgerPage,
-    MenuItemPage
+    MenuItemPage,
+    ShoppingCartPage
   ],
   providers: [
     StatusBar,
@@ -42,6 +46,7 @@ import {MenuItemPage} from "../pages/menu-item/menu-item";
     CategoryService,
     BurgerService,
     MenuItemService,
+    ShoppingCartService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

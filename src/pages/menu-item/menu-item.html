@@ -2,74 +2,62 @@
 
 <ion-grid>
 
+
   <ion-row *ngFor="let item of items; let i=index" >
     <template [ngIf]="i % 4 === 0">
 
-      <ion-col width-20 *ngIf="i < items.length" (click)="itemTapped(items[i])" col-12 col-sm>
+      <ion-col width-25 *ngIf="i < items.length"  col-12 col-sm >
         <ion-card>
-          <ion-card-header>
-            <ion-avatar item-center>
+          <!--<ion-card-header>-->
+            <ion-avatar item-center (click)="itemTapped(items[i])">
               <div class="thumbnail">
                 <img src="{{items[i].imagePath}} " />
-                <div class="wrapper">
-                  <div class="caption post-content">
 
-                    {{items[i].title}}
-                    <!--<div class="item-note" item-right>-->
-                    <!--{{items[i].description}}<br>-->
-                    <!--{{items[i].description}}<br>-->
-
-                    <!--</div>-->
-                    <div>
-                      Rs.{{items[i].unitPrice}}.00
-                    </div>
-                  </div>
-                </div>
               </div>
             </ion-avatar>
-          </ion-card-header>
+          <!--</ion-card-header>-->
 
 
         </ion-card>
+        <div text-center>
+          <p>{{items[i].title}}</p>
+        </div>
+
+        <div text-center>
+          <p><b>Rs.{{items[i].unitPrice}}.00</b></p>
+        </div>
 
         <button  ion-button color="secondary" full small icon-right (click)="addToCart(items[i])" >
           Add to wish-list
           <ion-icon name="cart"></ion-icon>
         </button>
 
-        <button ion-button color="secondary" block small icon-right>
+         <button *ngIf="category===1 || category === 2             "  ion-button color="secondary" block small icon-right>
           Customize
           <ion-icon name="arrow-forward"></ion-icon>
         </button>
       </ion-col>
 
-      <ion-col width-20 *ngIf="i+1 < items.length" (click)="itemTapped(items[i+1])" col-12 col-sm>
+      <ion-col width-25 *ngIf="i+1 < items.length"  col-12 col-sm   >
         <ion-card>
-          <ion-card-header>
-            <ion-avatar item-center>
+          <!--<ion-card-header>-->
+            <ion-avatar item-center (click)="itemTapped(items[i+1])">
               <div class="thumbnail">
               <img src="{{items[i+1].imagePath}} " />
-                <div class="wrapper">
-                  <div class="caption post-content">
 
-                    {{items[i+1].title}}
-                    <!--<div class="item-note" item-right>-->
-                      <!--{{items[i+1].description}}<br>-->
-                      <!--{{items[i+1].description}}<br>-->
-                      <!--{{items[i].description}}<br>-->
-
-                    <!--</div>-->
-                    <div>
-                      Rs.{{items[i+1].unitPrice}}.00
-                    </div>
-                  </div>
-                </div>
               </div>
             </ion-avatar>
-          </ion-card-header>
+          <!--</ion-card-header>-->
 
         </ion-card>
 
+        <div text-center>
+          <p>{{items[i+1].title}}</p>
+        </div>
+
+        <div text-center>
+          <p><b>Rs.{{items[i+1].unitPrice}}.00</b></p>
+        </div>
 
         <button ion-button color="secondary" full small icon-right (click)="addToCart(items[i+1])">
           Add to wish-list
@@ -83,31 +71,26 @@
 
       </ion-col>
 
-      <ion-col width-20 *ngIf="i < items.length" (click)="itemTapped(items[i+2])" col-12 col-sm>
+      <ion-col width-25 *ngIf="i < items.length"  col-12 col-sm >
         <ion-card>
-          <ion-card-header>
-            <ion-avatar item-center>
+          <!--<ion-card-header>-->
+            <ion-avatar item-center (click)="itemTapped(items[i+2])">
               <div class="thumbnail">
                 <img src="{{items[i+2].imagePath}} " />
-                <div class="wrapper">
-                  <div class="caption post-content">
 
-                    {{items[i+2].title}}
-                    <!--<div class="item-note" item-right>-->
-                      <!--{{items[i+2].description}}<br>-->
-                      <!--{{items[i+2].description}}<br>-->
-
-                    <!--</div>-->
-                    <div>
-                      Rs.{{items[i+2].unitPrice}}.00
-                    </div>
-                  </div>
-                </div>
               </div>
             </ion-avatar>
-          </ion-card-header>
+          <!--</ion-card-header>-->
 
         </ion-card>
+
+        <div text-center>
+          <p>{{items[i+2].title}}</p>
+        </div>
+
+        <div text-center>
+          <p><b>Rs.{{items[i+2].unitPrice}}.00</b></p>
+        </div>
 
         <button ion-button color="secondary" full small icon-right (click)="addToCart(items[i+2])">
           Add to wish-list
@@ -120,32 +103,26 @@
         </button>
       </ion-col>
 
-      <ion-col width-20 *ngIf="i < items.length" (click)="itemTapped(items[i+3])" col-12 col-sm>
+      <ion-col width-25 *ngIf="i < items.length"  col-12 col-sm >
         <ion-card>
-          <ion-card-header>
-            <ion-avatar item-center>
-              <div class="thumbnail">
+          <!--<ion-card-header>-->
+            <ion-avatar item-center (click)="itemTapped(items[i+3])">
+              <div class="thumbnail" >
                 <img src="{{items[i+3].imagePath}} " />
-                <div class="wrapper">
-                  <div class="caption post-content">
 
-                    {{items[i+3].title}}
-                    <!--<div class="item-note" item-right>-->
-                      <!--{{items[i+3].description}}<br>-->
-                      <!--{{items[i+3].description}}<br>-->
-
-                    <!--</div>-->
-                    <div>
-                      Rs.{{items[i+3].unitPrice}}.00
-                    </div>
-                  </div>
-                </div>
               </div>
             </ion-avatar>
-          </ion-card-header>
+          <!--</ion-card-header>-->
 
 
         </ion-card>
+        <div text-center>
+          <p>{{items[i+3].title}}</p>
+        </div>
+
+        <div text-center>
+          <p><b>Rs.{{items[i+3].unitPrice}}.00</b></p>
+        </div>
 
         <button ion-button color="secondary" full small icon-right (click)="addToCart(items[i+3])">
           Add to wish-list
@@ -161,3 +138,31 @@
   </ion-row>
 </ion-grid>
 
+
+<!--&lt;!&ndash;how to code to overlap image and text&ndash;&gt;-->
+
+<!--<ion-card>-->
+  <!--<ion-card-header>-->
+    <!--<ion-avatar item-center (click)="itemTapped(items[i+3])">-->
+      <!--<div class="thumbnail">-->
+        <!--<img src="{{items[i+3].imagePath}} " />-->
+        <!--<div class="wrapper">-->
+          <!--<div class="caption post-content">-->
+
+            <!--{{items[i+3].title}}-->
+            <!--&lt;!&ndash;<div class="item-note" item-right>&ndash;&gt;-->
+            <!--&lt;!&ndash;{{items[i+3].description}}<br>&ndash;&gt;-->
+            <!--&lt;!&ndash;{{items[i+3].description}}<br>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--<div>-->
+              <!--Rs.{{items[i+3].unitPrice}}.00-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</ion-avatar>-->
+  <!--</ion-card-header>-->
+
+
+<!--</ion-card>-->

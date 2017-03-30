@@ -31,7 +31,7 @@ page-category{
   }
 
   .thumbnail {
-    margin:0 auto;
+    //margin:0 auto;
     text-align:center;
     color: red;
   }
@@ -40,7 +40,28 @@ page-category{
     text-align:center;
     color: red;
   }
+}
 
+page-shopping-cart {
+  .ion-card{
+    width: 100%;
+    min-height: 100px;
+  }
 
+  .ion-header{
+    text-align: center;
+
+  }
+
+  .hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 5px;
+  }
 
 }
+
