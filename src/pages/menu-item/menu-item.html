@@ -10,7 +10,7 @@
           <!--trigger tapping the menu item image-->
           <ion-avatar item-center (click)="itemTapped(items[i])">
             <div class="thumbnail">
-              <img src="{{items[i].imagePath}} " />
+              <img src="{{getImage(items[i].item_photo)}} " />
             </div>
           </ion-avatar>
         </ion-card>
@@ -20,7 +20,7 @@
         </div>
 
         <div text-center>
-          <p><b>Rs.{{items[i].unitPrice}}.00</b></p>
+          <p><b>Rs.{{items[i].unit_price}}.00</b></p>
         </div>
 
         <!--trigger tapping adding the menu item into the shopping cart-->
@@ -28,6 +28,20 @@
           Add to wish-list
           <ion-icon name="cart"></ion-icon>
         </button>
+        <button  ion-button color="secondary" full small icon-right (click)="getImage(items[i].item_photo)" >
+          Add to wish-list
+          <ion-icon name="cart"></ion-icon>
+        </button>
+
+        <ion-card>
+          <!--trigger tapping the menu item image-->
+          <ion-avatar item-center (click)="itemTapped(items[i])">
+            <div class="thumbnail">
+              <img src="{{photo}}" />
+              <p>{{str}}</p>
+            </div>
+          </ion-avatar>
+        </ion-card>
 
          <button  ion-button color="secondary" block small icon-right>
           Customize
@@ -39,7 +53,7 @@
         <ion-card>
             <ion-avatar item-center (click)="itemTapped(items[i+1])">
               <div class="thumbnail">
-              <img src="{{items[i+1].imagePath}} " />
+              <img src="{{items[i+1].item_photo}} " />
 
               </div>
             </ion-avatar>
@@ -50,7 +64,7 @@
         </div>
 
         <div text-center>
-          <p><b>Rs.{{items[i+1].unitPrice}}.00</b></p>
+          <p><b>Rs.{{items[i+1].unit_price}}.00</b></p>
         </div>
 
         <button ion-button color="secondary" full small icon-right (click)="addToCart(items[i+1])">
@@ -69,7 +83,7 @@
         <ion-card>
             <ion-avatar item-center (click)="itemTapped(items[i+2])">
               <div class="thumbnail">
-                <img src="{{items[i+2].imagePath}} " />
+                <img src="{{items[i+2].item_photo}} " />
 
               </div>
             </ion-avatar>
@@ -80,7 +94,7 @@
         </div>
 
         <div text-center>
-          <p><b>Rs.{{items[i+2].unitPrice}}.00</b></p>
+          <p><b>Rs.{{items[i+2].unit_price}}.00</b></p>
         </div>
 
         <button ion-button color="secondary" full small icon-right (click)="addToCart(items[i+2])">
@@ -98,7 +112,7 @@
         <ion-card>
             <ion-avatar item-center (click)="itemTapped(items[i+3])">
               <div class="thumbnail" >
-                <img src="{{items[i+3].imagePath}} " />
+                <img src="{{items[i+3].item_photo}} " />
 
               </div>
             </ion-avatar>
@@ -109,7 +123,7 @@
         </div>
 
         <div text-center>
-          <p><b>Rs.{{items[i+3].unitPrice}}.00</b></p>
+          <p><b>Rs.{{items[i+3].unit_price}}.00</b></p>
         </div>
 
         <button ion-button color="secondary" full small icon-right (click)="addToCart(items[i+3])">

@@ -13,6 +13,7 @@ import {MenuItemService} from "../providers/menu-item-service";
 import {MenuItemPage} from "../pages/menu-item/menu-item";
 import {ShoppingCartService} from "../providers/shopping-cart-service";
 import {ShoppingCartPage} from "../pages/shopping-cart/shopping-cart";
+import {GithubUsers} from "../providers/github-users";
 
 
 @NgModule({
@@ -42,6 +43,7 @@ import {ShoppingCartPage} from "../pages/shopping-cart/shopping-cart";
     CategoryService,
     MenuItemService,
     ShoppingCartService,
+    GithubUsers,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -1,43 +1,35 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {Category} from "../models/category";
 import {Observable} from "rxjs";
+import {User} from "../models/users";
 
 
 @Injectable()
 export class CategoryService {
 
-  restaurantApiUrl = 'http://www.restaurant.com';
-
-  private categories: Category[] = [new Category(1,'Breakfast','very tasty and yummy',  true),
-    new Category(2,'Beef','cheesy',true)
-    ,
-    new Category(3,'Chicken and Fish','yum yum', true)
-    ,
-    new Category(4,'Salad and Wraps','yum yum',true)
-    ,
-    new Category(5,'Sides','cheesy',false)
-    ,
-    new Category(6,'Drinks','yum yum',false)
-    ,
-    new Category(7,'Desserts','yum yum',false)
-
-  ];
+  restaurantApiUrl = 'http://192.168.8.100:3000';
+  github = 'http://api.github.com';
 
   constructor(public http: Http) {
-    console.log('Hello CategoryService Provider');
+
   }
 
-  getCategories(): Category[]{
-    return this.categories;
+  loadCategories(){
+      return this.http.get('http://192.168.8.100:3000/categories')
+        .map(res => {
+          console.log('inside loadCategories function');
+          console.log('rec', res);
+         return res.json()
+        });
   }
 
-  // Load all github users
-  load(): Observable<Category[]> {
-    return this.http.get(`${this.restaurantApiUrl}/category`)
-      .map(res => <Category[]>res.json());
+  loads(): Observable<User[]> {
+    console.log('inside the load function');
+    return this.http.get(`${this.github}/users`)
+      .map(res => {
+        return <User[]>res.json()
+      });
   }
-
 
 }

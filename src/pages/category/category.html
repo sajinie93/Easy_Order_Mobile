@@ -2,14 +2,14 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>category</ion-title>
+    <ion-title>Restaurant</ion-title>
   </ion-navbar>
 
   <ion-toolbar no-border-top>
     <!--make two-way data binding for the "select" property-->
     <ion-segment [(ngModel)]="select" >
       <!--dynamically update segments for currently available categories-->
-      <ion-segment-button *ngFor="let item of items" value={{item.id}}>
+      <ion-segment-button *ngFor="let item of items" value={{item.title}}>
         {{item.title}}
       </ion-segment-button>
 
@@ -35,7 +35,7 @@
     </ion-row>
   </ion-grid>
 
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
+  <!--<div *ngIf="selectedItem" padding>-->
+    <!--You navigated here from <b>{{selectedItem.title}}</b>-->
+  <!--</div>-->
 </ion-content>

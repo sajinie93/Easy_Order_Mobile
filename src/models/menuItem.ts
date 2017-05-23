@@ -1,4 +1,4 @@
 export class MenuItem{
-  constructor(public id: number,public title: string, public description: string, public unitPrice: number, public  imagePath: string, public categoryId: number){
+  constructor(public _id: string, public title: string, public description: string, public unit_price: string, public  imagePath: string, public category: string){
   }
 }

@@ -46,4 +46,5 @@ export class ShoppingCartPage implements OnInit, DoCheck, OnChanges{
     this.shoppingCartService.placeOrder();
   }
 
+
 }

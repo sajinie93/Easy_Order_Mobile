@@ -1,6 +1,6 @@
 export class Category{
 
-  constructor(public id: number, public title: string, public description: string, public isCustomizable: boolean){
+  constructor(public id: string, public title: string, public isCustomizable: boolean){
 
   }
 }

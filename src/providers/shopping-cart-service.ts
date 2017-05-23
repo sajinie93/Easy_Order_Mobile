@@ -8,25 +8,26 @@ import {Observable} from "rxjs";
 @Injectable()
 export class ShoppingCartService {
 
+  private tableNum:number = 1;
   private wishList: MenuItem[] = [];
-  private orderList: number[] = [];
-  private totalPrize: number = 0;
-  restaurantApiUrl = 'http://www.restaurant.com';
+  private orderList: string[] = [];
+  private totalPrize: number;
+  restaurantApiUrl = 'http://192.168.8.100:3000';
 
   constructor(public http: Http) {
-    console.log('Hello ShoppingCartService Provider');
+    this.totalPrize = 0;
   }
 
   addToWishList(menuItem: MenuItem){
     this.wishList.push(menuItem);
-    this.orderList.push(menuItem.id);
-    this.totalPrize = this.totalPrize + menuItem.unitPrice;
+    this.orderList.push(menuItem._id);
+    this.totalPrize = this.totalPrize + parseInt(menuItem.unit_price);
   }
 
   removeFromWishList(menuItem: MenuItem){
-    this.totalPrize = this.totalPrize - menuItem.unitPrice;
+    this.totalPrize = this.totalPrize - parseInt(menuItem.unit_price);
     this.wishList.splice(this.wishList.indexOf(menuItem), 1);
-    this.orderList.splice(this.orderList.indexOf(menuItem.id), 1);
+    this.orderList.splice(this.orderList.indexOf(menuItem._id), 1);
   }
 
   getWishList(): MenuItem[]{
@@ -38,23 +39,18 @@ export class ShoppingCartService {
   }
 
   placeOrder(): Observable<MenuItem[]>{
-    let obj = {"order":this.orderList, "price": this.totalPrize};
+    let obj = {"order":this.orderList, "price": this.totalPrize, "tableNum": this.tableNum};
     let body = JSON.stringify(obj);
     let headers = new Headers({'Content-Type': 'application/json'});
     let options = new RequestOptions({headers: headers});
     console.log(body);
-    return this.http.post(`${this.restaurantApiUrl}/orderPlace`, body, options)
+    return this.http.post(`${this.restaurantApiUrl}/placeOrder`, body, options)
       .catch(this.handleError);
-
   }
 
   handleError(error) {
     console.error(error);
     return Observable.throw(error.json().error || 'Server error');
   }
-
-
-
-
 
 }

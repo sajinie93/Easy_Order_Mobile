@@ -7,8 +7,8 @@
         Wish List
       </ion-list-header>
       <!--iterate through the items in the shopping list-->
-      <ion-item *ngFor="let item of shoppingList">
-        <span item-left>{{item.title}}</span>
+      <ion-item text-wrap *ngFor="let item of shoppingList">
+        <span item-right>{{item.title}}</span>
         <span item-right>{{item.unitPrice}}</span>
         <ion-icon name="arrow-dropright-circle" item-right></ion-icon>
         <!--trigger tapping removing the items in the shopping list-->
@@ -29,6 +29,10 @@
     <div text-center>
       <!--trigger tapping placing the order-->
       <button ion-button default round (click)="placeOrder()">Proceed</button>
+    </div>
+    <div text-center>
+      <!--trigger tapping placing the order-->
+      <button ion-button default round (click)="callBill()">Call the Bill</button>
     </div>
 
   </ion-item>
